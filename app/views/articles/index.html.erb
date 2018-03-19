@@ -4,7 +4,7 @@
   <% @articles.each do |article| %>
   <p><strong>Article Title</strong></p>
   <li>
-    <%= article.title %>
+    <%= link_to article.title, article_path(article), class: 'article-title', id: "article-#{article.id}" %>
   </li>
   <p><strong>Article Body</strong></p>
   <li>
