@@ -6,5 +6,6 @@
 <p>Article Body</p>
 <%= @article.body %>
 <br>
-<%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Do you really want to destroy the article?"} %>
+<%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Do you really want to destroy the article?"} %><br>
+<%= link_to "Edit", edit_article_path(@article), data: {confirm: "Do you accept the changes?"} %><br>
 <%= link_to "<< Back to Articles List", articles_path %>
