@@ -13,14 +13,13 @@ describe "Deleting an article" do
     expect(page).to have_content article1.body
     expect(page).to have_link "Delete"
 
-    click_link "Delete Article"
+    click_link "Delete"
 
+    expect(current_path).to eq articles_path
     expect(page).to_not have_content article1.title
     expect(page).to_not have_content article1.body
     expect(page).to have_content article2.title
     expect(page).to have_content article2.body
-
-    expect(current_path).to eq articles_path
     end
   end
 end
