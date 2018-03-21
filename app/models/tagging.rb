@@ -1,0 +1,5 @@
+class Tagging < ApplicationRecord
+
+
+
+end
