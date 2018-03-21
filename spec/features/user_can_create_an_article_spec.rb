@@ -12,6 +12,7 @@ describe "As a user" do
     fill_in "article[body]", with: "Some stuff"
     click_on "Create Article"
 
+    expect(page).to have_content "Article: New Title! was created"
     expect(page).to have_content("New Title!")
   end
 end

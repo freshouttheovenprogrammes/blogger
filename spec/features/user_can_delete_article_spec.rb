@@ -15,8 +15,8 @@ describe "Deleting an article" do
 
     click_link "Delete"
 
+    expect(page).to have_content "Article: Title1 was destroyed"
     expect(current_path).to eq articles_path
-    expect(page).to_not have_content article1.title
     expect(page).to_not have_content article1.body
     expect(page).to have_content article2.title
     expect(page).to have_content article2.body
