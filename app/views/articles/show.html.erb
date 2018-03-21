@@ -1,11 +1,13 @@
 <h1>View Article</h1>
 
-<p>Article Title</p>
-<%= @article.title %>
+  <%= @article.title %>
+  <br>
+  <%= @article.body %>
+  <br>
 
-<p>Article Body</p>
-<%= @article.body %>
-<br>
-<%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Do you really want to destroy the article?"} %><br>
-<%= link_to "Edit", edit_article_path(@article), data: {confirm: "Do you accept the changes?"} %><br>
-<%= link_to "<< Back to Articles List", articles_path %>
+  <h3>Comments</h3>
+  <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
+  <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Do you really want to destroy the article?"} %><br>
+  <%= link_to "Edit", edit_article_path(@article), data: {confirm: "Do you accept the changes?"} %><br>
+  <%= render partial: 'comments/form' %>
+  <%= link_to "<< Back to Articles List", articles_path %>
