@@ -5,20 +5,20 @@ describe "Deleting an article" do
     it "displays all articles without the deleted entry" do
 
     article1 = Article.create!(title: "Title1", body: "Body1")
-    article1 = Article.create!(title: "Title2", body: "Body2")
+    article2 = Article.create!(title: "Title2", body: "Body2")
 
     visit article_path(article1)
 
-    expect(page).to have_content "Title1"
-    expect(page).to have_content "Body1"
+    expect(page).to have_content article1.title
+    expect(page).to have_content article1.body
     expect(page).to have_link "Delete"
 
     click_link "Delete Article"
 
-    expect(page).to_not have_content "Title1"
-    expect(page).to_not have_content "Body1"
-    expect(page).to have_content "Title2"
-    expect(page).to have_content "Body2"
+    expect(page).to_not have_content article1.title
+    expect(page).to_not have_content article1.body
+    expect(page).to have_content article2.title
+    expect(page).to have_content article2.body
 
     expect(current_path).to eq articles_path
     end
