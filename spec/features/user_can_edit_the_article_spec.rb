@@ -14,7 +14,7 @@ describe "As a user" do
       fill_in "article[title]", with: "FancyThing"
       fill_in "article[body]", with: "This is a brand new body baby"
 
-      click_on "Edit Article"
+      click_on "Update Article"
 
       expect(current_path).to eq article_path(article)
       expect(page).to have_content "FancyThing"
