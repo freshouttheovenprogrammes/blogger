@@ -17,7 +17,6 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.save
-
     flash.notice = "Article: #{@article.title} was created"
 
     redirect_to article_path(@article)
@@ -46,7 +45,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :tag_list)
   end
 
   def set_article
