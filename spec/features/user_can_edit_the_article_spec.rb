@@ -16,6 +16,7 @@ describe "As a user" do
 
       click_on "Update Article"
 
+      expect(page).to have_content("Article: FancyThing was updated")
       expect(current_path).to eq article_path(article)
       expect(page).to have_content "FancyThing"
       expect(page).to have_content "This is a brand new body baby"
