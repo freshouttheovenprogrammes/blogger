@@ -7,10 +7,4 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
   end
-
-
-  # private
-  #
-  #   def article_params
-  #   end
 end
