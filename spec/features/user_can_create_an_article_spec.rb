@@ -10,28 +10,11 @@ describe "As a user" do
 
     fill_in "article[title]", with: "New Title!"
     fill_in "article[body]", with: "Some stuff"
-    fill_in "article[tag_list]", with: "ruby"
-    click_on "Create Article"
-
-    expect(page).to have_content "Article: New Title! was created"
-    expect(page).to have_content("New Title!")
-    expect(page).to_not have_content("ruby,")
-    expect(page).to have_content("ruby")
-  end
-  it "multiple tags are comma seperated" do
-
-    visit articles_path
-    click_link "Create a New Article"
-
-    expect(current_path).to eq(new_article_path)
-
-    fill_in "article[title]", with: "New Title!"
-    fill_in "article[body]", with: "Some stuff"
     fill_in "article[tag_list]", with: "ruby, technology"
     click_on "Create Article"
-    save_and_open_page
+
     expect(page).to have_content "Article: New Title! was created"
     expect(page).to have_content("New Title!")
-    expect(page).to have_content("ruby, technology")
+    expect(page).to have_content("ruby technology")
   end
 end
