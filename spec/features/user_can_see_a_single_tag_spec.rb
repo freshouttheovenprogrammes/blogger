@@ -9,7 +9,7 @@ describe "When I'm at the article show page" do
 
       visit article_path(article1)
 
-      click_on "Generic"
+      click_link "generic"
 
       expect(current_path).to eq tag_path(tag)
       expect(page).to have_content(article1.title)
