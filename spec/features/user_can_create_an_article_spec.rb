@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "As a user" do
-  xit "I can create a new article" do
+  it "I can create a new article" do
 
     visit articles_path
     click_link "Create a New Article"
